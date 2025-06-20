@@ -5,7 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module",
-    "start": "node server.js"
+    "start": "node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "update": "git add . && git commit -m 'update' && git push && npm run build && npm run deploy"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +20,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "joi": "^17.13.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
